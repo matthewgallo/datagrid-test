@@ -38,6 +38,7 @@ function App() {
     {
       Header: 'Health',
       accessor: 'health',
+      Cell: ({cell: {value}}) => <span className="custom-cell-wrapper">{value}</span>
     },
   ];
 
