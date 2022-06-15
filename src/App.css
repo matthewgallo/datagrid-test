@@ -1,0 +1,7 @@
+@import 'carbon-components/css/carbon-components.min.css';
+@import "@carbon/ibm-products/css/index.min.css";
+
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+}
