@@ -13,6 +13,10 @@ function App() {
       id: 'rowIndex', // id is required when accessor is a function.
     },
     {
+      Header: 'Pet type',
+      accessor: 'petType',
+    },
+    {
       Header: 'First Name',
       accessor: 'firstName',
       sticky: 'left',
