@@ -43,14 +43,10 @@ function App() {
 
   const columns = React.useMemo(() => defaultHeader, []);
   const [data, setData] = useState(() => generateData({ rows: 16 }));
-  console.log(data);
-  console.log(columns);
   const datagridState = useDatagrid({
     columns,
     data,
   });
-
-  console.log(datagridState);
 
   return (
     <div className="App">
