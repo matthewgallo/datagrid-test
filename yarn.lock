@@ -259,10 +259,10 @@
     "@carbon/import-once" "^10.7.0"
     "@carbon/layout" "^10.37.1"
 
-"@carbon/ibm-products@^1.20.2":
-  version "1.20.2"
-  resolved "https://registry.yarnpkg.com/@carbon/ibm-products/-/ibm-products-1.20.2.tgz#fcc6b3a3dc507129498e6a455ce6339c9d1b0b3d"
-  integrity sha512-Gqw9MpOh4GsQZXQmTR/hLL2fBdemcUmPopgOtlwKXGjBY08HbYjWyJeq3sKAp8bb+iatYY1G51GhAyLMn/nWQg==
+"@carbon/ibm-products@^1.22.0":
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/@carbon/ibm-products/-/ibm-products-1.22.0.tgz#58f960110538fff828f1a0aa989c1072f07a0c94"
+  integrity sha512-RDS2PHCRoUkiFnsGfldYGaMrFEmjlXCPL+aoJ88AoYmhsuwYh3ydKdg2vStmhIdyIXczAAco8DGnRWeLzWUD7Q==
   dependencies:
     "@babel/runtime" "^7.17.9"
     "@carbon/telemetry" "^0.1.0"
@@ -451,7 +451,7 @@ caniuse-lite@^1.0.30001349:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001354.tgz#95c5efdb64148bb4870771749b9a619304755ce5"
   integrity sha512-mImKeCkyGDAHNywYFA4bqnLAzTUvVkqPvhY4DV47X+Gl2c5Z8c3KNETnXp14GQt11LvxE8AwjzGxJ+rsikiOzg==
 
-carbon-components-react@^7:
+carbon-components-react@^7.57.2:
   version "7.57.2"
   resolved "https://registry.yarnpkg.com/carbon-components-react/-/carbon-components-react-7.57.2.tgz#37266b9577b4d8ded6b2c9677fd8b866a1e231e3"
   integrity sha512-qkdJLYjfBfDvSl43+LSU0/3MB9FYTMQvuiy/DSsD0//RtUndj3bn6DJyS3E0OLFssICoQyYMAnjTTjFtRfhK9A==
@@ -477,10 +477,10 @@ carbon-components-react@^7:
     wicg-inert "^3.1.1"
     window-or-global "^1.0.1"
 
-carbon-components@^10.56.0:
-  version "10.56.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.56.0.tgz#bb5890f00f81cebcddfa2dbae4794477deb539f4"
-  integrity sha512-GPLqHiu2SWvMxcQOi/CcgA/XA3aX/5HiEPSQjLwzjKAJsnkpzq043Jf7QwgLOVbTBzGSjFbFkJnE2lc73I2WBw==
+carbon-components@^10.57.2:
+  version "10.57.2"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-10.57.2.tgz#e6a6e011126c9fb82846697a7f00f79c3bfb6d0b"
+  integrity sha512-p4BwtZ6KRznWacT0wzC6chEl/K1QD0MyMnfAEsxNIzQKSeTv5NhPaO4BH4BjYut6VoFDs1d71i2njkJdhx1aHw==
   dependencies:
     "@carbon/telemetry" "0.1.0"
     flatpickr "4.6.1"
@@ -557,11 +557,6 @@ copy-to-clipboard@^3.3.1:
   integrity sha512-i13qo6kIHTTpCm8/Wup+0b1mVWETvu2kIMzKoK8FpkLkFxlt0znUAHcMzox+T8sPlqtZXq3CulEjQHsYiGFJUw==
   dependencies:
     toggle-selection "^1.0.6"
-
-crypto-extra@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/crypto-extra/-/crypto-extra-1.0.1.tgz#91d9e3d8d35f9a16d548c073c31b147f34eab11e"
-  integrity sha512-EDJ07p6UDdyX+7GL6Bb6FqCuCHY34GuII9esE/xXZtW7tlB+A7MYT9O/c1M/ov2aGTdwvw0b3z5OcO50zYBG5Q==
 
 csstype@^3.0.2:
   version "3.1.0"
@@ -879,13 +874,6 @@ ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
-
-namor@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/namor/-/namor-2.0.3.tgz#a42c5e76f6170f9e2fc4ddfc6d403a881f59350d"
-  integrity sha512-BDDfplXUwxcEK1QAwL0k82VyqYyAa3xdQv24ijfLc+5Zqdm3IyfAIBTCRWhKPbbLncmdvG/vCr9JhrVH9FGpNQ==
-  dependencies:
-    crypto-extra "1.0.1"
 
 nanoid@^3.3.4:
   version "3.3.4"

@@ -1,52 +1,80 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Datagrid, useDatagrid } from '@carbon/ibm-products';
-import { generateData } from './utils/generateData';
-import './App.css'
+import { Pagination } from 'carbon-components-react';
+import './App.css';
+import { useTestHook } from './hooks/useTestHook';
+
+const DatagridPagination = ({ state, setPageSize, gotoPage, rows }) => {
+  const updatePagination = ({ page, pageSize }) => {
+    console.log(state);
+    setPageSize(pageSize);
+    gotoPage(page - 1); // Carbon is non-zero-based
+  };
+
+  return (
+    <Pagination
+      page={state.pageIndex + 1} // react-table is zero-based
+      pageSize={state.pageSize}
+      pageSizes={state.pageSizes || [10, 20, 30, 40, 50]}
+      totalItems={rows.length}
+      onChange={updatePagination}
+    />
+  );
+};
 
 function App() {
 
+  const [commentData, setCommentData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useTestHook();
+  useEffect(() => {
+    async function fetchCommentsJSON() {
+      setLoading(true);
+      const response = await fetch('https://jsonplaceholder.typicode.com/comments');
+      const comments = await response.json();
+      return comments;
+    }
+    fetchCommentsJSON().then(comments => {
+      console.log(comments);
+      setCommentData(comments);
+      setLoading(false);
+    });
+  }, []);
+
   const defaultHeader = [
     {
-      Header: 'Row Index',
-      accessor: (row, i) => i,
-      sticky: 'left',
-      id: 'rowIndex', // id is required when accessor is a function.
+      Header: 'Post id',
+      accessor: 'postId'
     },
     {
-      Header: 'Pet type',
-      accessor: 'petType',
+      Header: 'Id',
+      accessor: 'id',
     },
     {
-      Header: 'First Name',
-      accessor: 'firstName',
-      sticky: 'left',
+      Header: 'Name',
+      accessor: 'name',
     },
     {
-      Header: 'Last Name',
-      accessor: 'lastName',
-    },
-    {
-      Header: 'Age',
-      accessor: 'age',
-      width: 50,
-    },
-    {
-      Header: 'Vet Visits',
-      accessor: 'visits',
-      width: 60,
-    },
-    {
-      Header: 'Health',
-      accessor: 'health',
-      Cell: ({cell: {value}}) => <span className="custom-cell-wrapper">{value}</span>
-    },
+      Header: 'Comment body',
+      accessor: 'body',
+    }
   ];
 
   const columns = React.useMemo(() => defaultHeader, []);
-  const [data, setData] = useState(() => generateData({ rows: 16 }));
+  const emptyStateTitle = 'Empty state title';
+  const emptyStateDescription =
+    'Description text explaining why this card is empty.';
   const datagridState = useDatagrid({
     columns,
-    data,
+    data: commentData,
+    emptyStateTitle,
+    emptyStateDescription,
+    isFetching: loading,
+    DatagridPagination,
+    initialState: {
+      pageSize: 10,
+      pageSizes: [5, 10, 25, 50],
+    },
   });
 
   return (

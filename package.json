@@ -8,12 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@carbon/ibm-products": "^1.20.2",
+    "@carbon/ibm-products": "^1.22.0",
     "@carbon/icons-react": "^10",
     "@carbon/motion": "^10",
     "@carbon/themes": "^10",
-    "carbon-components": "^10.56.0",
-    "carbon-components-react": "^7",
+    "carbon-components": "^10.57.2",
+    "carbon-components-react": "^7.57.2",
     "carbon-icons": "^7.0.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
