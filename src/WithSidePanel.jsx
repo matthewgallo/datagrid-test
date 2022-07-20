@@ -50,6 +50,10 @@ function App({ slideIn }) {
       accessor: 'id',
     },
     {
+      Header: 'Email',
+      accessor: 'email',
+    },
+    {
       Header: 'Name',
       accessor: 'name',
     },

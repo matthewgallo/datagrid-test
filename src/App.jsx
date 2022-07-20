@@ -25,7 +25,6 @@ function App() {
 
   const [commentData, setCommentData] = useState([]);
   const [loading, setLoading] = useState(false);
-  useTestHook();
   useEffect(() => {
     async function fetchCommentsJSON() {
       setLoading(true);
@@ -34,7 +33,6 @@ function App() {
       return comments;
     }
     fetchCommentsJSON().then(comments => {
-      console.log(comments);
       setCommentData(comments);
       setLoading(false);
     });
@@ -48,6 +46,10 @@ function App() {
     {
       Header: 'Id',
       accessor: 'id',
+    },
+    {
+      Header: 'Email',
+      accessor: 'email',
     },
     {
       Header: 'Name',
