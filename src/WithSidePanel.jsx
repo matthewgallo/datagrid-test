@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Datagrid, useDatagrid } from '@carbon/ibm-products';
+import { Datagrid, useDatagrid, useOnRowClick, SidePanel } from '@carbon/ibm-products';
 import { Pagination } from 'carbon-components-react';
 import './App.scss';
 import PageWrapper from './PageWrapper';
@@ -21,11 +21,12 @@ const DatagridPagination = ({ state, setPageSize, gotoPage, rows }) => {
   );
 };
 
-function App() {
+function App({ slideIn }) {
 
+  const [sidePanelOpen, setSidePanelOpen] = useState(false);
+  const [activeRowData, setActiveRowData] = useState(null);
   const [commentData, setCommentData] = useState([]);
   const [loading, setLoading] = useState(false);
-  useTestHook();
   useEffect(() => {
     async function fetchCommentsJSON() {
       setLoading(true);
@@ -34,7 +35,6 @@ function App() {
       return comments;
     }
     fetchCommentsJSON().then(comments => {
-      console.log(comments);
       setCommentData(comments);
       setLoading(false);
     });
@@ -63,22 +63,61 @@ function App() {
   const emptyStateTitle = 'Empty state title';
   const emptyStateDescription =
     'Description text explaining why this card is empty.';
-  const datagridState = useDatagrid({
-    columns,
-    data: commentData,
-    emptyStateTitle,
-    emptyStateDescription,
-    isFetching: loading,
-    DatagridPagination,
-    initialState: {
-      pageSize: 10,
-      pageSizes: [5, 10, 25, 50],
+  const datagridState = useDatagrid(
+    {
+      columns,
+      data: commentData,
+      emptyStateTitle,
+      emptyStateDescription,
+      isFetching: loading,
+      DatagridPagination,
+      initialState: {
+        pageSize: 10,
+        pageSizes: [5, 10, 25, 50],
+      },
+      onRowClick: (row) => {
+        setSidePanelOpen(true);
+        setActiveRowData(row);
+      },
     },
-  });
+    useOnRowClick
+  );
 
   return (
-    <PageWrapper>
+    <PageWrapper className="page-content-wrapper-test-class">
       <Datagrid datagridState={{ ...datagridState }} />
+      <SidePanel
+        selectorPageContent={slideIn && '.page-content-wrapper-test-class'}
+        slideIn={slideIn}
+        includeOverlay={!slideIn}
+        open={sidePanelOpen}
+        onRequestClose={() => {
+          setSidePanelOpen(false)
+          setActiveRowData(null);
+        }}
+        actions={[
+          {
+            label: 'Submit',
+            onClick: () => {
+              setSidePanelOpen(false);
+              setActiveRowData(null);
+            },
+            kind: 'primary',
+          },
+          {
+            label: 'Cancel',
+            onClick: () => {
+              setSidePanelOpen(false);
+              setActiveRowData(null);
+            },
+            kind: 'secondary',
+          },
+        ]}
+        title={activeRowData?.original?.email}
+        subtitle={activeRowData?.original?.name}
+      >
+        {activeRowData?.original?.body || 'default content'}
+      </SidePanel>
     </PageWrapper>
   )
 }
