@@ -1,5 +1,6 @@
 @import 'carbon-components/css/carbon-components.min.css';
 @import "@carbon/ibm-products/css/index.min.css";
+@import '@carbon/ibm-products/scss/components/InlineEdit/inline-edit';
 
 .App {
   max-width: 900px;
@@ -14,4 +15,10 @@
 
 .link-active {
   color: red;
+}
+
+.custom-cell-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

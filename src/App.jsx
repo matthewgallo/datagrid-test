@@ -54,6 +54,7 @@ function App() {
     {
       Header: 'Name',
       accessor: 'name',
+      Cell: ({cell: {value}}) => <span className="custom-cell-wrapper">{value}</span>
     },
     {
       Header: 'Comment body',
