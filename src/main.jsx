@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import "./config"; // must come before @carbon/ibm-cloud-cognitive... imports
+import "./config"; // must come before @carbon/ibm-products... imports
 import App from './App'
 import './index.css'
 import WithSidePanel from './WithSidePanel';
