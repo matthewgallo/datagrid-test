@@ -266,7 +266,7 @@
     "@carbon/import-once" "^10.7.0"
     "@carbon/layout" "^10.37.1"
 
-"@carbon/ibm-products@^1.28.0":
+"@carbon/ibm-products@^1.27.0":
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/@carbon/ibm-products/-/ibm-products-1.27.0.tgz#04d723b3d90b90c49a68640a7ea0d47d15dc99ae"
   integrity sha512-GmHNnldyJttZ30q5a5tZ+pmWRdiNWHVfzL/I5ojd1rhwspMt8fuzx4ZZNEULdSuWLWoTTGSKXEsO3QOtE4/muw==
