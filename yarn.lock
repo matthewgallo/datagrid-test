@@ -266,10 +266,10 @@
     "@carbon/import-once" "^10.7.0"
     "@carbon/layout" "^10.37.1"
 
-"@carbon/ibm-products@^1.27.0":
-  version "1.27.0"
-  resolved "https://registry.yarnpkg.com/@carbon/ibm-products/-/ibm-products-1.27.0.tgz#04d723b3d90b90c49a68640a7ea0d47d15dc99ae"
-  integrity sha512-GmHNnldyJttZ30q5a5tZ+pmWRdiNWHVfzL/I5ojd1rhwspMt8fuzx4ZZNEULdSuWLWoTTGSKXEsO3QOtE4/muw==
+"@carbon/ibm-products@^1.31.0":
+  version "1.31.0"
+  resolved "https://registry.yarnpkg.com/@carbon/ibm-products/-/ibm-products-1.31.0.tgz#d83774061b86a88382df11743e7674c581fb6e80"
+  integrity sha512-sw6adTia9uvwE4FlPz8gFOvITWU8LEIeCs5UnPM7gvC3JWuP3ry/CXjt29Cbe9bH6aJpaWTh4W6Wdvu4cRaYyQ==
   dependencies:
     "@babel/runtime" "^7.18.9"
     "@carbon/telemetry" "^0.1.0"

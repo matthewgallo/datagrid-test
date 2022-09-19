@@ -10,6 +10,7 @@ import App from './App'
 import './index.css'
 import WithSidePanel from './WithSidePanel';
 import Navigation from './Navigation';
+import { CustomizeColumnsExample } from './CustomizeColumnsExample';
 
 const rootNode = document.getElementById('root');
 ReactDOM.render(
@@ -19,6 +20,7 @@ ReactDOM.render(
         <Route index element={<App />} />
         <Route path="with-side-panel" element={<WithSidePanel />} />
         <Route path="with-side-panel-slide-in" element={<WithSidePanel slideIn />} />
+        <Route path="with-customize-columns" element={<CustomizeColumnsExample />} />
       </Route>
     </Routes>
   </BrowserRouter>
