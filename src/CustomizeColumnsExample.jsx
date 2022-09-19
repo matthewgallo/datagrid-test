@@ -54,6 +54,7 @@ export const CustomizeColumnsExample = () => {
         hiddenColumns: ['age'],
         columnOrder: [],
       },
+      isFetching: loading,
       customizeColumnsProps: {
         onSaveColumnPrefs: (newColDefs) => {
           console.log(newColDefs);

@@ -35,6 +35,7 @@ const Navigation = () => {
           <CustomSideNavLink to="/with-side-panel">Side panel on row click (slide over)</CustomSideNavLink>
           <CustomSideNavLink to="/with-side-panel-slide-in">Side panel on row click (slide in)</CustomSideNavLink>
           <CustomSideNavLink to="/with-customize-columns">Customize columns</CustomSideNavLink>
+          <CustomSideNavLink to="/with-expandable-rows">Expanded rows</CustomSideNavLink>
         </SideNavItems>
       </SideNav>
       <Outlet />

@@ -11,6 +11,7 @@ import './index.css'
 import WithSidePanel from './WithSidePanel';
 import Navigation from './Navigation';
 import { CustomizeColumnsExample } from './CustomizeColumnsExample';
+import { ExpandableRowsExample } from './ExpandableRowsExample';
 
 const rootNode = document.getElementById('root');
 ReactDOM.render(
@@ -21,6 +22,7 @@ ReactDOM.render(
         <Route path="with-side-panel" element={<WithSidePanel />} />
         <Route path="with-side-panel-slide-in" element={<WithSidePanel slideIn />} />
         <Route path="with-customize-columns" element={<CustomizeColumnsExample />} />
+        <Route path="with-expandable-rows" element={<ExpandableRowsExample />} />
       </Route>
     </Routes>
   </BrowserRouter>
